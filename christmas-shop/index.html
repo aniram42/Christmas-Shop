@@ -7,18 +7,16 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Allura&family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="">
+    <link rel="icon" href="icons/snowflake.svg" type="image/svg+xml">
 </head>
 <body>
 <header class="header">
     <div class="container">
         <div class="logo">
-            <div class="snowflake">
-                <img src="icons/snowflake.svg" alt="logo" class="vector">
-            </div>
-            <div class="the-gifts">
-                <span class="action-small"> The gifts</span>
-            </div>
+            <a href="index.html">
+                <img src="icons/snowflake.svg" alt="logo">
+                <span class="action-small">The gifts</span>
+            </a>
         </div>
         <nav class="navigation">
             <div class="nav-items">
@@ -26,13 +24,13 @@
                     <a href="gifts.html" class="action-small text-decoration">Gifts</a>
                 </div>
                 <div class="item-about">
-                    <a href="#" class="action-small text-decoration">About</a>
+                    <a href="#about" class="action-small text-decoration">About</a>
                 </div>
                 <div class="item-best">
-                    <a href="#" class="action-small text-decoration">Best</a>
+                    <a href="#best" class="action-small text-decoration">Best</a>
                 </div>
                 <div class="item-contacts">
-                    <a href="#" class="action-small text-decoration">Contacts</a>
+                    <a href="#contacts" class="action-small text-decoration">Contacts</a>
                 </div>
             </div>
         </nav>
@@ -42,9 +40,9 @@
     <section class="hero">
         <div class="container-hero">
             <p class="caption">Merry Christmas</p>
-            <h1 class="header1">Gift yourself the magic of new possibilities</h1>
+            <h1 class="h1">Gift yourself the magic of new possibilities</h1>
             <button class="hero-button">
-                <a href="#" class="action-small-hero text-decoration">Explore magigal gifts</a>
+                <a href="gifts.html" class="action-small-hero text-decoration">Explore magigal gifts</a>
             </button>
             <p class="caption">and Happy New Year</p>
         </div>
@@ -53,8 +51,8 @@
         <div class="container-about">
             <div class="text-container-about">
                 <div class="text-about">
-                    <p class="caption-about">About</p>
-                    <h2 class="header2">Unleash your inner superhero!</h2>
+                    <p id='about' class="caption-about">About</p>
+                    <h2 class="h2">Unleash your inner superhero!</h2>
                     <p class="paragraph">This New Year marks the beginning of your journey to inner harmony and new strengths. We offer unique gifts that will help you improve your life.</p>
                 </div>
             </div>
@@ -80,21 +78,21 @@
                     <span class="slider-text-row">Dream</span>
                     <img src="icons/fairytale-house.png" alt="fairytale-house" class="image-row">
                 </div>
-                <div class="button-slider">
-                    <button class="button-left">
-                        <img src="icons/Vector-left.svg" alt="vector-left" class="vector-button-left">
-                    </button>
-                    <button class="button-right">
-                        <img src="icons/Vector-right.svg" alt="vector-right" class="vector-button-right">
-                    </button>
-                </div>
+            </div>
+            <div class="button-slider">
+                <button class="button-left">
+                    <img src="icons/Vector-left.svg" alt="vector-left" class="vector-button-left">
+                </button>
+                <button class="button-right">
+                    <img src="icons/Vector-right.svg" alt="vector-right" class="vector-button-right">
+                </button>
             </div>
         </div>
     </section>
     <section class="best-gifts-section">
         <div class="container-best-gifts">
             <div class="text-best-gifts">
-                <p class="caption">Best Gifts</p>
+                <p id='best' class="caption">Best Gifts</p>
                 <h2 class="text-header">Especially for you</h2>
             </div>
             <div class="card-container">
@@ -103,8 +101,8 @@
                         <img src="icons/gift-for-work.png" alt="gift-for-work" class="image-item">
                     </div>
                     <div class="text-card">
-                        <h4 class="header4 header4--purple">For work</h4>
-                        <h3 class="header3">Console.log Guru</h3>
+                        <h4 class="h4 h4--purple">For work</h4>
+                        <h3 class="h3">Console.log Guru</h3>
                     </div>
                 </div>
                 <div class="card-item">
@@ -112,8 +110,8 @@
                         <img src="icons/gift-for-health.png" alt="gift-for-health" class="image-item">
                     </div>
                     <div class="text-card">
-                        <h4 class="header4 header4--green">For health</h4>
-                        <h3 class="header3">Hydration Bot</h3>
+                        <h4 class="h4 h4--green">For health</h4>
+                        <h3 class="h3">Hydration Bot</h3>
                     </div>
                 </div>
                 <div class="card-item">
@@ -121,8 +119,8 @@
                         <img src="icons/gift-for-work.png" alt="gift-for-work" class="image-item">
                     </div>
                     <div class="text-card">
-                        <h4 class="header4 header4--purple">For work</h4>
-                        <h3 class="header3">Merge Master</h3>
+                        <h4 class="h4 h4--purple">For work</h4>
+                        <h3 class="h3">Merge Master</h3>
                     </div>
                 </div>
                 <div class="card-item">
@@ -130,8 +128,8 @@
                         <img src="icons/gift-for-harmony.png" alt="gift-for-harmony" class="image-item">
                     </div>
                     <div class="text-card">
-                        <h4 class=" header4 header4--pink">For harmony</h4>
-                        <h3 class="header3">Spontaneous Coding Philosopher</h3>
+                        <h4 class=" h4 h4--pink">For harmony</h4>
+                        <h3 class="h3">Spontaneous Coding Philosopher</h3>
                     </div>
                 </div>
             </div>
@@ -140,28 +138,28 @@
     <section class="cta-section">
         <div class="container-cta">
             <div class="text-cta">
-                <h2 class="header2 header2--white">Ready to start your journey to a better version of yourself?</h2>
+                <h2 class="h2 h2--white">Ready to start your journey to a better version of yourself?</h2>
                 <button class="hero-button">
-                    <a href="#" class="action-small-hero text-decoration">Explore magigal gifts</a>
+                    <a href="gifts.html" class="action-small-hero text-decoration">Explore magigal gifts</a>
                 </button>
                 <div class="timer-container">
                     <p class="caption">The New Year is Coming Soon...</p>
                     <div class="timer">
                         <div class="timer-item">
-                            <h2 class="header2 header2--white">47</h2>
-                            <h4 class="header4 header4--white">days</h4>
+                            <h2 class="h2 h2--white">47</h2>
+                            <h4 class="h4 h4--white">days</h4>
                         </div>
                         <div class="timer-item">
-                            <h2 class="header2 header2--white">5</h2>
-                            <h4 class="header4 header4--white">hours</h4>
+                            <h2 class="h2 h2--white">5</h2>
+                            <h4 class="h4 h4--white">hours</h4>
                         </div>
                         <div class="timer-item">
-                            <h2 class="header2 header2--white">34</h2>
-                            <h4 class="header4 header4--white">minutes</h4>
+                            <h2 class="h2 h2--white">34</h2>
+                            <h4 class="h4 h4--white">minutes</h4>
                         </div>
                         <div class="timer-item">
-                            <h2 class="header2 header2--white">12</h2>
-                            <h4 class="header4 header4--white">seconds</h4>
+                            <h2 class="h2 h2--white">12</h2>
+                            <h4 class="h4 h4--white">seconds</h4>
                         </div>
                     </div>
                 </div>
@@ -173,38 +171,48 @@
     <div class="container-footer">
         <div class="contacts-footer">
             <div class="contacts-item">
-                <img src="icons/santa-claus.svg" alt="santa-claus" class="footer-image">
-                <p class="action-large">+375 (29) 111-22-33</p>
-                <h3 class="header3">Call Us</h3>
+                <a href="tel:+375291112233" class="contact-link">
+                    <img src="icons/santa-claus.svg" alt="santa-claus" class="footer-image">
+                    <p id='contacts' class="action-large">+375 (29) 111-22-33</p>
+                    <h3 class="h3">Call Us</h3>
+                </a>
             </div>
             <div class="contacts-item">
-                <img src="icons/christmas-tree.svg" alt="christmas-tree" class="footer-image">
-                <p class="action-large">Magic forest</p>
-                <h3 class="header3">meet us</h3>
+                <a href="https://maps.app.goo.gl/pPdFxmuCZJAxshtH9" target="_blank" class='contact-link'>
+                    <img src="icons/christmas-tree.svg" alt="christmas-tree" class="footer-image">
+                    <p class="action-large">Magic forest</p>
+                    <h3 class="h3">meet us</h3>
+                </a>
             </div>
             <div class="contacts-item">
-                <img src="icons/snake.svg" alt="snake" class="footer-image">
-                <p class="action-large">gifts@magic.com</p>
-                <h3 class="header3">write us</h3>
+                <a href="mailto:gifts@magic.com" class='contact-link'>
+                    <img src="icons/snake.svg" alt="snake" class="footer-image">
+                    <p class="action-large">gifts@magic.com</p>
+                    <h3 class="h3">write us</h3>
+                </a>
             </div>
         </div>
         <div class="links-footer">
-            <div class="socials">
-                <div class="socials-item">
-                    <a href="#" class="socials-link"><img src="icons/telegram.svg" alt="telegram"></a>
+            <div class="links-footer">
+                <div class="socials">
+                    <div class="socials-item">
+                        <a href="https://web.telegram.org/" target="_blank" class="socials-link"><img src="icons/telegram.svg" alt="telegram"></a>
+                    </div>
+                    <div class="socials-item">
+                        <a href="https://www.facebook.com/?locale=ru_RU" target="_blank" class="socials-link"><img src="icons/facebook.svg" alt="facebook"></a>
+                    </div>
+                    <div class="socials-item">
+                        <a href="https://www.instagram.com/" target="_blank" class="socials-link"><img src="icons/instagram.svg" alt="instagram"></a>
+                    </div>
+                    <div class="socials-item">
+                        <a href="https://www.facebook.com/?locale=ru_RU" target="_blank" class="socials-link"><img src="icons/X.svg" alt="x"></a>
+                    </div>
                 </div>
-                <div class="socials-item">
-                    <a href="#" class="socials-link"><img src="icons/facebook.svg" alt="facebook"></a>
-                </div>
-                <div class="socials-item">
-                    <a href="#" class="socials-link"><img src="icons/instagram.svg" alt="instagram"></a>
-                </div>
-                <div class="socials-item">
-                    <a href="#" class="socials-link"><img src="icons/X.svg" alt="x"></a>
-                </div>
+                <p class="paragraph-footer">© Copyright 2025, All Rights Reserved</p>
+                <a href="https://rs.school/" target="_blank">
+                    <p class="caption-dark">Made in Rolling Scopes School</p>
+                </a>
             </div>
-            <p class="paragraph-footer">© Copyright 2025, All Rights Reserved</p>
-            <p class="caption-dark">Made in Rolling Scopes School</p>
         </div>
     </div>
 </footer>

@@ -4,6 +4,10 @@
     padding: 0;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     margin: 0;
     padding: 0;
@@ -11,6 +15,11 @@ body {
 
 button {
     border: none;
+}
+
+a {
+    cursor: default;
+    text-decoration: none;
 }
 
 .text-decoration {
@@ -22,8 +31,6 @@ button {
     height: 64px;
     padding: 0 8px;
     background: #FFFFFF;
-    display: flex;
-    justify-content: center;
 }
 
 .container {
@@ -33,37 +40,27 @@ button {
     padding: 12px 0;
     gap: 12px;
     margin: 0 auto;
+    background-color: #FFFFFF;
     display: flex;
     justify-content: space-between;
-    align-items: center;
-    background-color: #FFFFFF;
 }
 
 .logo {
-    width: 141px;
+    min-width: 141px;
+    width: 100%;
     height: 40px;
     padding: 8px 20px;
+    border-radius: 20px;
     gap: 8px;
     display: flex;
     align-items: center;
 }
 
-.snowflake {
-    width: 24px;
-    height: 24px;
-}
-
-.vector {
-    width: 20.68px;
-    height: 24px;
-    color: #FF4646;
-    padding-left: 1.66px;
-}
-
-.the-gifts {
-    width: auto;
-    height: 16px;
-    white-space: nowrap;
+.logo a {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    text-decoration: none;
 }
 
 .action-small {
@@ -80,8 +77,10 @@ button {
 }
 
 .navigation {
+    width: 100%;
     height: 40px;
     display: flex;
+    justify-content: flex-end;
 }
 
 .nav-items {
@@ -123,7 +122,8 @@ button {
 
 .hero {
     width: 1440px;
-    height: 524px;
+    min-height: 524px;
+    height: auto;
     padding: 60px 8px;
     margin: 0 auto;
     background-color: #FF4646;
@@ -138,13 +138,16 @@ button {
 }
 
 .container-hero {
-    max-width: 426px;
-    height: 404px;
+    max-width: 500px;
+    width: 100%;
+    min-height: 404px;
+    height: auto;
     padding: 60px 0;
     gap: 12px;
     margin: 0 auto;
     display: flex;
     flex-direction: column;
+    justify-content: center;
     align-items: center;
     text-align: center;
 }
@@ -162,8 +165,8 @@ button {
 }
 
 .caption-dark {
-    width: 426px;
-    height: 144px;
+    width: 429px;
+    height: auto;
     font-family: "Allura", cursive;
     font-weight: 400;
     font-style: normal;
@@ -174,9 +177,9 @@ button {
     text-align: center;
 }
 
-.header1 {
-    max-width: 426px;
-    min-height: 144px;
+.h1 {
+    max-width: 429px;
+    height: 144px;
     font-family: Montserrat, sans-serif;
     font-weight: 600;
     font-style: normal;
@@ -196,6 +199,7 @@ button {
     background-color: #181C29;
     border: none;
     cursor: pointer;
+    transition: all 0.3s ease;
 }
 
 .action-small-hero {
@@ -263,7 +267,7 @@ button {
     color: #FF4646;
 }
 
-.header2 {
+.h2 {
     width: 426px;
     height: auto;
     font-family: Montserrat, sans-serif;
@@ -276,7 +280,7 @@ button {
     color: #181C29;
 }
 
-.header2--white { color: #FFFFFF; }
+.h2--white { color: #FFFFFF; }
 
 .paragraph {
     width: 426px;
@@ -418,6 +422,7 @@ button {
     align-items: center;
     justify-content: center;
     cursor: pointer;
+    transition: all 0.3s ease;
 }
 
 .vector-button-left {
@@ -437,6 +442,7 @@ button {
     align-items: center;
     justify-content: center;
     cursor: pointer;
+    transition: all 0.3s ease;
 }
 .vector-button-right {
     width: 12.5px;
@@ -494,6 +500,13 @@ button {
     height: 342px;
     border-radius: 20px;
     background-color: #ECF3F8;
+    transition: all 0.3s ease;
+}
+
+.card-item:hover {
+    background-color: #f0f0f0;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    transform: translateY(-5px);
 }
 
 .card-item-image {
@@ -517,7 +530,7 @@ button {
     flex-direction: column;
 }
 
-.header4 {
+.h4 {
     width: auto;
     height: 16px;
     font-family: Montserrat, sans-serif;
@@ -529,12 +542,12 @@ button {
     text-transform: uppercase;
 }
 
-.header4--purple { color: #4361FF; }
-.header4--green { color: #06A44F; }
-.header4--pink { color: #FF43F7; }
-.header4--white { color: #FFFFFF; }
+.h4--purple { color: #4361FF; }
+.h4--green { color: #06A44F; }
+.h4--pink { color: #FF43F7; }
+.h4--white { color: #FFFFFF; }
 
-.header3 {
+.h3 {
     width: 270px;
     height: 24px;
     font-family: Montserrat, sans-serif;
@@ -599,7 +612,7 @@ button {
 }
 
 .timer {
-    min-width: 344px;
+    max-width: 344px;
     width: 100%;
     min-height: 72px;
     border-radius: 20px;
@@ -608,6 +621,7 @@ button {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    margin: 0 auto;
 }
 
 .timer-item {
@@ -626,7 +640,7 @@ button {
 .timer-item:not(:last-child)::after {
     content: "";
     position: absolute;
-    right: -10px;
+    right: -1px;
     top: 50%;
     transform: translateY(-50%);
     width: 1px;
@@ -667,7 +681,7 @@ button {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
- }
+}
 
 .contacts-item {
     max-width: 417.33px;
@@ -682,6 +696,23 @@ button {
     flex-direction: column;
     align-items: center;
     text-align: center;
+    transition: all 0.3s ease;
+}
+
+.contacts-item:hover {
+    background-color: #f0f0f0;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    transform: translateY(-5px);
+}
+
+.contact-link {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+    color: inherit;
+    transition: all 0.3s ease;
+    gap: 12px;
 }
 
 .footer-image {
@@ -735,6 +766,13 @@ button {
     display: flex;
     align-items: center;
     justify-content: center;
+    transition: all 0.3s ease;
+}
+
+.socials-item:hover {
+    background-color: #f0f0f0;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    transform: translateY(-5px);
 }
 
 .socials-link {
