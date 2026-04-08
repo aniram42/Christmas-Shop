@@ -8,21 +8,13 @@ html {
     scroll-behavior: smooth;
 }
 
-body {
-    margin: 0;
-    padding: 0;
-}
 
 button {
-    border: none;
+    cursor: pointer;
 }
 
 a {
-    cursor: default;
-    text-decoration: none;
-}
-
-.text-decoration {
+    cursor: pointer;
     text-decoration: none;
 }
 
@@ -60,10 +52,27 @@ a {
     display: flex;
     align-items: center;
     gap: 8px;
-    text-decoration: none;
 }
 
 .action-small {
+    width: auto;
+    height: 16px;
+    font-family: Montserrat, sans-serif;
+    font-weight: 600;
+    font-style: normal;
+    font-size: 12px;
+    line-height: 1.3;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: #181C29;
+    transition: color 0.3s ease;
+}
+
+.action-small:hover {
+    color: #FF4646;
+}
+
+.action-small1 {
     width: auto;
     height: 16px;
     font-family: Montserrat, sans-serif;
@@ -92,32 +101,16 @@ a {
     justify-content: center;
 }
 
-.item-gifts {
+.item-nav {
     width: auto;
     height: 40px;
     padding: 12px 20px;
     border-radius: 12px;
+    transition: background-color 0.3s ease;
 }
 
-.item-about {
-    width: auto;
-    height: 40px;
-    padding: 12px 20px;
-    border-radius: 12px;
-}
-
-.item-best {
-    width: auto;
-    height: 40px;
-    padding: 12px 20px;
-    border-radius: 12px;
-}
-
-.item-contacts {
-    width: auto;
-    height: 40px;
-    padding: 12px 20px;
-    border-radius: 12px;
+.item-nav:hover {
+    background-color: #FF46461A;
 }
 
 .hero {
@@ -195,11 +188,16 @@ a {
     width: auto;
     height: 56px;
     border-radius: 20px;
-    padding: 20px 32px;
+    padding: 28px 32px;
     background-color: #181C29;
-    border: none;
-    cursor: pointer;
-    transition: all 0.3s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: background-color 0.3s ease;
+}
+
+.hero-button:hover {
+    background-color: #FFFFFF;
 }
 
 .action-small-hero {
@@ -213,7 +211,11 @@ a {
     letter-spacing: 0.05em;
     text-transform: uppercase;
     color: #FFFFFF;
-    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.action-small-hero:hover {
+    color: #181C29;
 }
 
 .about-section {
@@ -404,7 +406,7 @@ a {
     object-fit: cover;
 }
 
-.button-slider {
+.button-container {
     width: 1276px;
     height: 56px;
     gap: 20px;
@@ -412,7 +414,7 @@ a {
     justify-content: flex-end;
 }
 
-.button-left {
+.button-slider-left {
     width: 56px;
     height: 56px;
     border-radius: 20px;
@@ -421,18 +423,10 @@ a {
     display: flex;
     align-items: center;
     justify-content: center;
-    cursor: pointer;
-    transition: all 0.3s ease;
+    transition: background-color 0.3s ease;
 }
 
-.vector-button-left {
-    width: 12.5px;
-    height: 12px;
-    color: rgba(255, 255, 255, 0.4);
-    line-height: 1;
-}
-
-.button-right {
+.button-slider-right {
     width: 56px;
     height: 56px;
     border-radius: 20px;
@@ -441,14 +435,39 @@ a {
     display: flex;
     align-items: center;
     justify-content: center;
-    cursor: pointer;
-    transition: all 0.3s ease;
+    transition: background-color 0.3s ease;
 }
-.vector-button-right {
+
+.button-slider-left:hover {
+    background-color: #FFFFFF;
+}
+
+.button-slider-right:hover {
+    background-color: #FFFFFF;
+}
+
+.vector-left {
+    width: 12.5px;
+    height: 12px;
+    color: rgba(255, 255, 255, 0.4);
+    line-height: 1;
+    transition: color 0.3s ease;
+}
+
+.vector-right {
     width: 12.5px;
     height: 12px;
     color: rgba(255, 255, 255);
     line-height: 1;
+    transition: color 0.3s ease;
+}
+
+.vector-left:hover {
+    color: #FF4646;
+}
+
+.vector-right:hover {
+    color: #FF4646;
 }
 
 .best-gifts-section {
@@ -501,11 +520,14 @@ a {
     border-radius: 20px;
     background-color: #ECF3F8;
     transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.card-item:hover .h3 {
+    color: #FF4646;
 }
 
 .card-item:hover {
-    background-color: #f0f0f0;
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
     transform: translateY(-5px);
 }
 
@@ -634,7 +656,6 @@ a {
     position: relative;
     justify-content: center;
     text-align: center;
-
 }
 
 .timer-item:not(:last-child)::after {
@@ -700,18 +721,22 @@ a {
 }
 
 .contacts-item:hover {
-    background-color: #f0f0f0;
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
     transform: translateY(-5px);
+}
+
+.contacts-item:hover .action-large {
+    color: #FF4646;
+}
+
+.contacts-item:hover .h3 {
+    color: #FF4646;
 }
 
 .contact-link {
     display: flex;
     flex-direction: column;
     align-items: center;
-    text-decoration: none;
     color: inherit;
-    transition: all 0.3s ease;
     gap: 12px;
 }
 
@@ -746,7 +771,6 @@ a {
     justify-content: center;
     align-items: center;
     flex-direction: column;
-
 }
 
 .socials {
@@ -769,16 +793,19 @@ a {
     transition: all 0.3s ease;
 }
 
-.socials-item:hover {
-    background-color: #f0f0f0;
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-    transform: translateY(-5px);
-}
-
 .socials-link {
     width: 24px;
     height: 24px;
     display: flex;
     align-items: center;
     justify-content: center;
+    transition: all 0.3s ease;
+}
+
+.socials-link:hover svg path {
+    stroke: #FF4646;
+}
+
+.rs-link:hover {
+    color: #FF4646;
 }
