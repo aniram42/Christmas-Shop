@@ -68,10 +68,6 @@ a {
     transition: color 0.3s ease;
 }
 
-.action-small:hover {
-    color: #FF4646;
-}
-
 .action-small1 {
     width: auto;
     height: 16px;
@@ -106,11 +102,16 @@ a {
     height: 40px;
     padding: 12px 20px;
     border-radius: 12px;
-    transition: background-color 0.3s ease;
+    transition: all 0.3s ease;
+    cursor: pointer;
 }
 
 .item-nav:hover {
     background-color: #FF46461A;
+}
+
+.item-nav:hover .action-small {
+    color: #FF4646;
 }
 
 .hero {
@@ -423,7 +424,7 @@ a {
     display: flex;
     align-items: center;
     justify-content: center;
-    transition: background-color 0.3s ease;
+    cursor: default;
 }
 
 .button-slider-right {
@@ -435,15 +436,15 @@ a {
     display: flex;
     align-items: center;
     justify-content: center;
-    transition: background-color 0.3s ease;
-}
-
-.button-slider-left:hover {
-    background-color: #FFFFFF;
+    transition: all 0.3s ease;
 }
 
 .button-slider-right:hover {
     background-color: #FFFFFF;
+}
+
+.button-slider-right:hover .vector-right {
+    color: #FF4646;
 }
 
 .vector-left {
@@ -451,7 +452,6 @@ a {
     height: 12px;
     color: rgba(255, 255, 255, 0.4);
     line-height: 1;
-    transition: color 0.3s ease;
 }
 
 .vector-right {
@@ -459,15 +459,7 @@ a {
     height: 12px;
     color: rgba(255, 255, 255);
     line-height: 1;
-    transition: color 0.3s ease;
-}
-
-.vector-left:hover {
-    color: #FF4646;
-}
-
-.vector-right:hover {
-    color: #FF4646;
+    transition: all 0.3s ease;
 }
 
 .best-gifts-section {
@@ -525,10 +517,6 @@ a {
 
 .card-item:hover .h3 {
     color: #FF4646;
-}
-
-.card-item:hover {
-    transform: translateY(-5px);
 }
 
 .card-item-image {
@@ -718,10 +706,6 @@ a {
     align-items: center;
     text-align: center;
     transition: all 0.3s ease;
-}
-
-.contacts-item:hover {
-    transform: translateY(-5px);
 }
 
 .contacts-item:hover .action-large {
