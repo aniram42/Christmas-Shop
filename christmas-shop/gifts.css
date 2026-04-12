@@ -668,3 +668,26 @@ img {
         white-space: nowrap;
     }
 }
+
+/* Для экранов от 769px до 1440px (навигация в строку) */
+@media (min-width: 769px) and (max-width: 1440px) {
+    .navigation {
+        display: flex;
+        position: static;
+        width: auto;
+        background-color: transparent;
+    }
+
+    .nav-items {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 8px;
+        flex-wrap: nowrap;
+    }
+
+    .item-nav {
+        width: auto;
+        text-align: center;
+    }
+}
