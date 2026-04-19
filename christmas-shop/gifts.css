@@ -289,7 +289,7 @@ img {
     height: auto;
     gap: 12px;
     display: grid;
-    grid-template-columns: repeat(auto-fit, 310px);  /* ← главное свойство */
+    grid-template-columns: repeat(auto-fit, 310px);  /* главное свойство */
     justify-content: center;
     margin: 0 auto;
 }
@@ -348,6 +348,19 @@ img {
     color: #181C29;
     text-align: center;
 }
+
+.paragraph {
+    max-width: 426px;
+    width: 100%;
+    height: auto;
+    font-family: Montserrat, sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 16px;
+    line-height: 1.48;
+    color: #181C29;
+}
+
 
 .paragraph-footer {
     max-width: 426px;
@@ -539,7 +552,42 @@ img {
     }
 }
 
-/* БУРГЕР-МЕНЮ */
+/* Кнопка "Прокрутка вверх" */
+.scroll-to-top {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 56px;
+    height: 56px;
+    border-radius: 100px;
+    background-color: #FFFFFF;
+    border: 1px solid #FF4646;
+    cursor: pointer;
+    display: none;           /* ← скрыта по умолчанию */
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    transition: all 0.3s ease;
+    margin: 0 -22px 0 0;
+}
+
+/* Только для экранов 768px и менее */
+@media (max-width: 768px) {
+    .scroll-to-top {
+        display: none;       /*  скрыта, пока не прокрутим */
+    }
+}
+
+.arrow-up {
+    font-size: 18px;
+    color: #FF4646;
+    display: block;
+    line-height: 1;
+    margin-top: -2px;
+}
+
+
+/* Бургер-меню */
 .burger-menu {
     display: none;
     width: 40px;
@@ -558,15 +606,19 @@ img {
     height: 1px;
     background-color: #181C29;
     border-radius: 1px;
+    transition: all 0.3s ease;
 }
 
 /* Анимация в крестик при открытии */
 .burger-menu.active .burger-line:nth-child(1) {
-    transform: translateY(10px) rotate(45deg);
+    transform: translateY(5px) rotate(45deg);
+}
+.burger-menu.active .burger-line:nth-child(2) {
+    transform: translateY(-5px) rotate(-45deg);
 }
 
-.burger-menu.active .burger-line:nth-child(2) {
-    transform: translateY(-10px) rotate(-45deg);
+body.no-scroll {
+    overflow: hidden;
 }
 
 /* Медиа-запросы на 768px */
@@ -585,37 +637,61 @@ img {
 
     /* Скрываем навигацию */
     .navigation {
-        display: none;
-        position: absolute;
-        top: 100%;
+        position: fixed;
+        top: 64px;
         left: 0;
+        right: 0;
+        bottom: 0;
         width: 100%;
+        height: calc(100% - 64px);  /* вся высота минус header */
         background-color: #FFFFFF;
         padding: 20px;
-        border-radius: 0 0 20px 20px;
-        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
         z-index: 1000;
+        transform: translateX(100%);      /* скрыта справа */
+        transition: transform 0.3s ease;
+        overflow-y: auto;       /* если контента много - скролл */
     }
 
     /* Показываем навигацию при активном классе */
     .navigation.active {
-        display: block;
+        transform: translateX(0);
     }
 
     /* Меню в колонку */
     .nav-items {
+        display: flex;
         flex-direction: column;
         align-items: center;
+        justify-content: center;
         gap: 12px;
+        width: 100%;
+        min-height: 100%;
+        text-align: center;
     }
 
-    .item-nav {
+    .item-nav,
+    .item-nav-active {
         width: 100%;
         text-align: center;
+        border-radius: 12px;
+        padding: 12px 20px;
+        background-color: transparent;
+    }
+
+    .item-nav-active a,
+    .item-nav a {
+        font-family: Montserrat, sans-serif;
+        font-weight: 600;
+        font-style: normal;
+        font-size: 24px;
+        line-height: 1.52;
+        letter-spacing: 0.16em;
+        text-transform: uppercase;
+        color: #181C29;
     }
 }
 
-@media (max-width: 1060px) {
+@media (max-width: 1295px) {
     .contacts-footer {
         flex-direction: column;
         align-items: center;
@@ -691,3 +767,149 @@ img {
         text-align: center;
     }
 }
+
+/*Модальное окно для подарков*/
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #181C29CC;
+    z-index: 2000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.modal-overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.modal {
+    position: relative;
+    max-width: 400px;
+    width: 100%;
+    min-height: 514px;
+    height: auto;
+    border-radius: 20px;
+    background: #ECF3F8;
+}
+
+.modal-close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    z-index: 10;
+    background-color: transparent;
+    border: none;
+}
+
+.modal-icon {
+    width: 100%;
+    height: 230px;
+}
+
+.modal-icon img {
+    width: 100%;
+    height: 100%;
+    border-radius: 20px 20px 0 0;
+    object-fit: cover;
+}
+
+.modal-description {
+    width: 100%;
+    min-height: 284px;
+    height: auto;
+    border-radius: 20px;
+    padding: 20px;
+    gap: 20px;
+    background: #FFFFFF;
+    display: flex;
+    flex-direction: column;
+}
+
+.modal-content {
+    max-width: 360px;
+    width: 100%;
+    min-height: 104px;
+    height: auto;
+    gap: 8px;
+    display: flex;
+    flex-direction: column;
+}
+
+.modal-powers {
+    max-width: 360px;
+    width: 100%;
+    min-height: 120px;
+    height: auto;
+    gap: 8px;
+    display: flex;
+    flex-direction: column;
+}
+
+.modal-items {
+    width: 100%;
+    min-height: 96px;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.item-modal {
+    width: 100%;
+    min-height: 24px;
+    height: auto;
+    gap: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.item-modal .paragraph:nth-child(2) {
+    width: 60px;
+    text-align: right;
+    flex-shrink: 0;
+}
+
+.snowflake-modal {
+    max-width: 112px;
+    width: 100%;
+    min-height: 16px;
+    height: auto;
+    gap: 8px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.snowflake-active {
+    opacity: 1;
+}
+
+.snowflake-inactive {
+    opacity: 0.25;
+}
+
+.snowflake-modal img {
+    width: 16px;
+    height: 16px;
+}
+
+@media (max-width: 380px) {
+    .modal {
+        max-width: 364px;
+        width: 100%;
+        min-height: 514px;
+        height: auto;
+    }
+}
+

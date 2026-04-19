@@ -101,44 +101,7 @@
                 <p id='best' class="caption">Best Gifts</p>
                 <h2 class="text-header">Especially for you</h2>
             </div>
-            <div class="card-container">
-                <div class="card-item">
-                    <div class="card-item-image">
-                        <img src="icons/gift-for-work.png" alt="gift-for-work" class="image-item">
-                    </div>
-                    <div class="text-card">
-                        <span class="h4 h4--purple">For work</span>
-                        <span class="h3">Console.log Guru</span>
-                    </div>
-                </div>
-                <div class="card-item">
-                    <div class="card-item-image">
-                        <img src="icons/gift-for-health.png" alt="gift-for-health" class="image-item">
-                    </div>
-                    <div class="text-card">
-                        <span class="h4 h4--green">For health</span>
-                        <span class="h3">Hydration Bot</span>
-                    </div>
-                </div>
-                <div class="card-item">
-                    <div class="card-item-image">
-                        <img src="icons/gift-for-work.png" alt="gift-for-work" class="image-item">
-                    </div>
-                    <div class="text-card">
-                        <span class="h4 h4--purple">For work</span>
-                        <span class="h3">Merge Master</span>
-                    </div>
-                </div>
-                <div class="card-item">
-                    <div class="card-item-image">
-                        <img src="icons/gift-for-harmony.png" alt="gift-for-harmony" class="image-item">
-                    </div>
-                    <div class="text-card">
-                        <span class="h4 h4--pink">For harmony</span>
-                        <span class="h3">Spontaneous Coding Philosopher</span>
-                    </div>
-                </div>
-            </div>
+            <div class="card-container" id="random-cards"></div>
         </div>
     </section>
     <section class="cta-section">
@@ -150,19 +113,19 @@
                     <p class="caption">The New Year is Coming Soon...</p>
                     <div class="timer">
                         <div class="timer-item">
-                            <span class="h2 h2--white">47</span>
+                            <span class="h2 h2--white" id="days">0</span>
                             <span class="h4 h4--white">days</span>
                         </div>
                         <div class="timer-item">
-                            <span class="h2 h2--white">5</span>
+                            <span class="h2 h2--white" id="hours">0</span>
                             <span class="h4 h4--white">hours</span>
                         </div>
                         <div class="timer-item">
-                            <span class="h2 h2--white">34</span>
+                            <span class="h2 h2--white" id="minutes">0</span>
                             <span class="h4 h4--white">minutes</span>
                         </div>
                         <div class="timer-item">
-                            <span class="h2 h2--white">12</span>
+                            <span class="h2 h2--white" id="seconds">0</span>
                             <span class="h4 h4--white">seconds</span>
                         </div>
                     </div>
@@ -237,5 +200,32 @@
         </div>
     </div>
 </footer>
+
+<!-- Модальное окно для подарков -->
+<div class="modal-overlay" id="modalOverlay">
+    <div class="modal">
+        <button class="modal-close-btn" id="modalCloseBtn">
+            <svg width="70" height="70" viewBox="0 0 40 40" fill="none">
+                <path d="M18 6L6 18M6 6L18 18" stroke="#181C29" stroke-width="1" />
+            </svg>
+        </button>
+
+        <div class="modal-icon">
+            <img id="modalIcon" src="icons/gift-for-work.png" alt="gift icon">
+        </div>
+        <div class="modal-description">
+            <div class="modal-content">
+                <span class="h4" id="modalCategory">For work</span>
+                <span class="h3" id="modalName">Console.log Guru</span>
+                <p class="paragraph" id="modalDescription">Uses console.log like a crystal ball to find any issue.</p>
+            </div>
+            <div class="modal-powers">
+                <span class="h4">Adds superpowers to:</span>
+                <div class="modal-items" id="modalSuperpowers"></div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="index.js"></script>
 </body>
 </html>
