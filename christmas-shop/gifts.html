@@ -51,120 +51,12 @@
                 <h1 class="h1">Achieve health, harmony, and inner strength</h1>
             </div>
             <div class="tabs-container">
-                <button class="tabs-items-active action-small-white-active">All</button>
-                <button class="tabs-items action-small-white">for work</button>
-                <button class="tabs-items action-small-white">for health</button>
-                <button class="tabs-items action-small-white">for harmony</button>
+                <button id="tab-all" class="tabs-items-active action-small-white">All</button>
+                <button id="tab-work" class="tabs-items action-small-white">For work</button>
+                <button id="tab-health" class="tabs-items action-small-white">For health</button>
+                <button id="tab-harmony" class="tabs-items action-small-white">For harmony</button>
             </div>
-            <div class="card-container">
-                <div class="card-item">
-                    <div class="card-item-image">
-                        <img src="icons/gift-for-work.png" alt="gift-for-work" class="image-item">
-                    </div>
-                    <div class="text-card">
-                        <span class="h4 h4--purple">For work</span>
-                        <span class="h3">Console.log Guru</span>
-                    </div>
-                </div>
-                <div class="card-item">
-                    <div class="card-item-image">
-                        <img src="icons/gift-for-health.png" alt="gift-for-health" class="image-item">
-                    </div>
-                    <div class="text-card">
-                        <span class="h4 h4--green">For health</span>
-                        <span class="h3">Step Master</span>
-                    </div>
-                </div>
-                <div class="card-item">
-                    <div class="card-item-image">
-                        <img src="icons/gift-for-work.png" alt="gift-for-work" class="image-item">
-                    </div>
-                    <div class="text-card">
-                        <span class="h4 h4--purple">For work</span>
-                        <span class="h3">Bug Magnet</span>
-                    </div>
-                </div>
-                <div class="card-item">
-                    <div class="card-item-image">
-                        <img src="icons/gift-for-work.png" alt="gift-for-work" class="image-item">
-                    </div>
-                    <div class="text-card">
-                        <span class="h4 h4--purple">For work</span>
-                        <span class="h3">Shortcut Cheater</span>
-                    </div>
-                </div>
-                <div class="card-item">
-                    <div class="card-item-image">
-                        <img src="icons/gift-for-health.png" alt="gift-for-health" class="image-item">
-                    </div>
-                    <div class="text-card">
-                        <span class="h4 h4--green">For health</span>
-                        <span class="h3">Posture Levitation</span>
-                    </div>
-                </div>
-                <div class="card-item">
-                    <div class="card-item-image">
-                        <img src="icons/gift-for-harmony.png" alt="gift-for-harmony" class="image-item">
-                    </div>
-                    <div class="text-card">
-                        <span class="h4 h4--pink">For harmony</span>
-                        <span class="h3">Bug Acceptance Guru</span>
-                    </div>
-                </div>
-                <div class="card-item">
-                    <div class="card-item-image">
-                        <img src="icons/gift-for-health.png" alt="gift-for-health" class="image-item">
-                    </div>
-                    <div class="text-card">
-                        <span class="h4 h4--green">For health</span>
-                        <span class="h3">Snack Resister</span>
-                    </div>
-                </div>
-                <div class="card-item">
-                    <div class="card-item-image">
-                        <img src="icons/gift-for-harmony.png" alt="gift-for-harmony" class="image-item">
-                    </div>
-                    <div class="text-card">
-                        <span class=" h4 h4--pink">For harmony</span>
-                        <span class="h3">Error Laugher</span>
-                    </div>
-                </div>
-                <div class="card-item">
-                    <div class="card-item-image">
-                        <img src="icons/gift-for-health.png" alt="gift-for-health" class="image-item">
-                    </div>
-                    <div class="text-card">
-                        <span class="h4 h4--green">For health</span>
-                        <span class="h3">Hydration Bot</span>
-                    </div>
-                </div>
-                <div class="card-item">
-                    <div class="card-item-image">
-                        <img src="icons/gift-for-work.png" alt="gift-for-work" class="image-item">
-                    </div>
-                    <div class="text-card">
-                        <span class="h4 h4--purple">For work</span>
-                        <span class="h3">Merge Master</span>
-                    </div>
-                </div>
-                <div class="card-item">
-                    <div class="card-item-image">
-                        <img src="icons/gift-for-harmony.png" alt="gift-for-harmony" class="image-item">
-                    </div>
-                    <div class="text-card">
-                        <span class=" h4 h4--pink">For harmony</span>
-                        <span class="h3">Joy Charger</span>
-                    </div>
-                </div><div class="card-item">
-                <div class="card-item-image">
-                    <img src="icons/gift-for-harmony.png" alt="gift-for-harmony" class="image-item">
-                </div>
-                <div class="text-card">
-                    <span class=" h4 h4--pink">For harmony</span>
-                    <span class="h3">Spontaneous Coding Philosopher</span>
-                </div>
-            </div>
-            </div>
+            <div class="card-container" id="gifts-cards"></div>
         </div>
     </section>
 </main>
@@ -234,5 +126,35 @@
         </div>
     </div>
 </footer>
+<!-- Кнопка "Прокрутка вверх" -->
+<button id="scrollToTopBtn" class="scroll-to-top" aria-label="top">
+    <span class="arrow-up">↑</span>
+</button>
+<!-- Модальное окно для подарков -->
+<div class="modal-overlay" id="modalOverlay">
+    <div class="modal">
+        <button class="modal-close-btn" id="modalCloseBtn">
+            <svg width="70" height="70" viewBox="0 0 40 40" fill="none">
+                <path d="M18 6L6 18M6 6L18 18" stroke="#181C29" stroke-width="1" />
+            </svg>
+        </button>
+
+        <div class="modal-icon">
+            <img id="modalIcon" src="icons/gift-for-work.png" alt="gift icon">
+        </div>
+        <div class="modal-description">
+            <div class="modal-content">
+                <span class="h4" id="modalCategory">For work</span>
+                <span class="h3" id="modalName">Console.log Guru</span>
+                <p class="paragraph" id="modalDescription">Uses console.log like a crystal ball to find any issue.</p>
+            </div>
+            <div class="modal-powers">
+                <span class="h4">Adds superpowers to:</span>
+                <div class="modal-items" id="modalSuperpowers"></div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="gifts.js"></script>
 </body>
 </html>
