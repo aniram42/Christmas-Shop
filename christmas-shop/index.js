@@ -125,34 +125,48 @@ updateSlider();
 
 
 
-// ТАЙМЕР
+// ТАЙМЕР (UTC+0)
 function updateTimer() {
-    const now = new Date();
-    const nowUTC = new Date(
-    now.getUTCFullYear(),
-    now.getUTCMonth(),
-    now.getUTCDate(),
-    now.getUTCHours(),
-    now.getUTCMinutes(),
-    now.getUTCSeconds()
-    );
 
-    const nextYear = nowUTC.getFullYear() + 1;
-    const newYear = new Date(Date.UTC(nextYear, 0, 1, 0, 0, 0));
+    const now = Date.now();
+    const nowUTC = new Date(now);
+    const currentYear = nowUTC.getUTCFullYear();
 
-    const diff = newYear - nowUTC;
+    // Новый год: 1 января следующего года, 00:00:00 UTC
+    const newYearUTC = Date.UTC(currentYear + 1, 0, 1, 0, 0, 0);
 
+    // Разница в миллисекундах
+    const diff = newYearUTC - now;
+
+    // Если Новый год уже наступил
+    if (diff <= 0) {
+        document.getElementById('days').textContent = '0';
+        document.getElementById('hours').textContent = '0';
+        document.getElementById('minutes').textContent = '0';
+        document.getElementById('seconds').textContent = '0';
+        return;
+    }
+
+    // Расчет дней, часов, минут, секунд
     const days = Math.floor(diff / (1000 * 60 * 60 * 24));
     const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
     const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
     const seconds = Math.floor((diff % (1000 * 60)) / 1000);
 
-    document.getElementById('days').textContent = days;
-    document.getElementById('hours').textContent = hours;
-    document.getElementById('minutes').textContent = minutes;
-    document.getElementById('seconds').textContent = seconds;
+    // Обновляем элементы на странице
+    const daysEl = document.getElementById('days');
+    const hoursEl = document.getElementById('hours');
+    const minutesEl = document.getElementById('minutes');
+    const secondsEl = document.getElementById('seconds');
+
+    if (daysEl) daysEl.textContent = days;
+    if (hoursEl) hoursEl.textContent = hours;
+    if (minutesEl) minutesEl.textContent = minutes;
+    if (secondsEl) secondsEl.textContent = seconds;
+
 }
 
+// Запуск таймера
 updateTimer();
 setInterval(updateTimer, 1000);
 

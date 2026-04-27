@@ -676,6 +676,7 @@ body.no-scroll {
         border-radius: 12px;
         padding: 12px 20px;
         background-color: transparent;
+        margin: 8px;
     }
 
     .item-nav-active a,
