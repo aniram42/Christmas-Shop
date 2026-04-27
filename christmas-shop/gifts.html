@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Gifts</title>
+    <link rel="stylesheet" href="gifts.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Allura&family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="icon" href="icons/snowflake.svg" type="image/svg+xml">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+<header class="header">
+    <div class="container">
+        <div class="logo">
+            <a href="index.html">
+                <img src="icons/snowflake.svg" alt="logo">
+                <span class="action-small1">The gifts</span>
+            </a>
+        </div>
+
+        <!--Бургер-меню-->
+        <button class="burger-menu" aria-label="menu">
+            <span class="burger-line"></span>
+            <span class="burger-line"></span>
+        </button>
+
+        <nav class="navigation">
+            <div class="nav-items">
+                <div class="item-nav-active">
+                    <a href="gifts.html" class="action-small-active">Gifts</a>
+                </div>
+                <div class="item-nav">
+                    <a href="index.html#about" class="action-small">About</a>
+                </div>
+                <div class="item-nav">
+                    <a href="index.html#best" class="action-small">Best</a>
+                </div>
+                <div class="item-nav">
+                    <a href="#contact" class="action-small">Contacts</a>
+                </div>
+            </div>
+        </nav>
+    </div>
+</header>
+<main>
+    <section class="gifts-section">
+        <div class="container-gifts-section">
+            <div class="text-gifts">
+                <h1 class="h1">Achieve health, harmony, and inner strength</h1>
+            </div>
+            <div class="tabs-container">
+                <button id="tab-all" class="tabs-items-active action-small-white">All</button>
+                <button id="tab-work" class="tabs-items action-small-white">For work</button>
+                <button id="tab-health" class="tabs-items action-small-white">For health</button>
+                <button id="tab-harmony" class="tabs-items action-small-white">For harmony</button>
+            </div>
+            <div class="card-container" id="gifts-cards"></div>
+        </div>
+    </section>
+</main>
+<footer class="footer">
+    <div class="container-footer">
+        <div class="contacts-footer">
+            <div class="contacts-item">
+                <a href="tel:+375291112233" class="contact-link">
+                    <img src="icons/santa-claus.svg" alt="santa-claus" class="footer-image">
+                    <p id='contact' class="action-large">+375 (29) 111-22-33</p>
+                    <span class="h3">Call Us</span>
+                </a>
+            </div>
+            <div class="contacts-item">
+                <a href="https://maps.app.goo.gl/pPdFxmuCZJAxshtH9" target="_blank" class='contact-link'>
+                    <img src="icons/christmas-tree.svg" alt="christmas-tree" class="footer-image">
+                    <p class="action-large">Magic forest</p>
+                    <span class="h3">meet us</span>
+                </a>
+            </div>
+            <div class="contacts-item">
+                <a href="mailto:gifts@magic.com" class='contact-link'>
+                    <img src="icons/snake.svg" alt="snake" class="footer-image">
+                    <p class="action-large">gifts@magic.com</p>
+                    <span class="h3">write us</span>
+                </a>
+            </div>
+        </div>
+        <div class="links-footer">
+            <div class="socials">
+                <div class="socials-item">
+                    <a href="https://web.telegram.org/" target="_blank" class="socials-link">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M21 5L2 12.5L9 13.5M21 5L18.5 20L9 13.5M21 5L9 13.5M9 13.5V19L12.2488 15.7229" stroke="#181C29" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </a>
+                </div>
+                <div class="socials-item">
+                    <a href="https://www.facebook.com/?locale=ru_RU" target="_blank" class="socials-link">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M17 2H14C12.6739 2 11.4021 2.52678 10.4645 3.46447C9.52678 4.40215 9 5.67392 9 7V10H6V14H9V22H13V14H16L17 10H13V7C13 6.73478 13.1054 6.48043 13.2929 6.29289C13.4804 6.10536 13.7348 6 14 6H17V2Z" stroke="#181C29" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </a>
+                </div>
+                <div class="socials-item">
+                    <a href="https://www.instagram.com/" target="_blank" class="socials-link">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12 16C14.2091 16 16 14.2091 16 12C16 9.79086 14.2091 8 12 8C9.79086 8 8 9.79086 8 12C8 14.2091 9.79086 16 12 16Z" stroke="#181C29" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M3 16V8C3 5.23858 5.23858 3 8 3H16C18.7614 3 21 5.23858 21 8V16C21 18.7614 18.7614 21 16 21H8C5.23858 21 3 18.7614 3 16Z" stroke="#181C29" stroke-width="1.5"/>
+                            <path d="M17.5 6.51L17.51 6.49889" stroke="#181C29" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </a>
+                </div>
+                <div class="socials-item">
+                    <a href="https://x.com/?lang=ru" target="_blank" class="socials-link">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M16.8198 20.7684L3.75317 3.96836C3.44664 3.57425 3.72749 3 4.22678 3H6.70655C6.8917 3 7.06649 3.08548 7.18016 3.23164L20.2468 20.0316C20.5534 20.4258 20.2725 21 19.7732 21H17.2935C17.1083 21 16.9335 20.9145 16.8198 20.7684Z" stroke="#181C29" stroke-width="1.5"/>
+                            <path d="M20 3L4 21" stroke="#181C29" stroke-width="1.5" stroke-linecap="round"/>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+            <p class="paragraph-footer">© Copyright 2025, All Rights Reserved</p>
+            <a href="https://rs.school/" target="_blank">
+                <p class="caption-dark rs-link">Made in Rolling Scopes School</p>
+            </a>
+        </div>
+    </div>
+</footer>
+<!-- Кнопка "Прокрутка вверх" -->
+<button id="scrollToTopBtn" class="scroll-to-top" aria-label="top">
+    <span class="arrow-up">↑</span>
+</button>
+<!-- Модальное окно для подарков -->
+<div class="modal-overlay" id="modalOverlay">
+    <div class="modal">
+        <button class="modal-close-btn" id="modalCloseBtn">
+            <svg width="70" height="70" viewBox="0 0 40 40" fill="none">
+                <path d="M18 6L6 18M6 6L18 18" stroke="#181C29" stroke-width="1" />
+            </svg>
+        </button>
+
+        <div class="modal-icon">
+            <img id="modalIcon" src="icons/gift-for-work.png" alt="gift icon">
+        </div>
+        <div class="modal-description">
+            <div class="modal-content">
+                <span class="h4" id="modalCategory">For work</span>
+                <span class="h3" id="modalName">Console.log Guru</span>
+                <p class="paragraph" id="modalDescription">Uses console.log like a crystal ball to find any issue.</p>
+            </div>
+            <div class="modal-powers">
+                <span class="h4">Adds superpowers to:</span>
+                <div class="modal-items" id="modalSuperpowers"></div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="gifts.js"></script>
+</body>
+</html>
